@@ -1,19 +1,23 @@
-
-import { SignedOut, SignInButton,SignedIn } from '@clerk/nextjs'
-import React from 'react'
+import CTA from "@/components/landing/CTA";
+import Footer from "@/components/landing/Footer";
+import Header from "@/components/landing/Header";
+import Hero from "@/components/landing/Hero";
+import HowItWorks from "@/components/landing/HowItWorks";
+import PricingSection from "@/components/landing/PricingSection";
+import { SignedOut, SignInButton, SignedIn } from "@clerk/nextjs";
+import React from "react";
 
 function Home() {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <SignedOut>
-        <SignInButton mode='modal'/>
-      </SignedOut>
-      <SignedIn>
-        <SignedOut>lOGOUT</SignedOut>
-      </SignedIn>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <HowItWorks />
+      <PricingSection />
+      <CTA />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
