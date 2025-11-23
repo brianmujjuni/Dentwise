@@ -49,7 +49,7 @@ function CTA() {
               >
                 <CalendarIcon className="mr-2 h-4 w-4" />
                 Book appointment
-              </Button>
+              </Button> 
             </div>
           </div>
 
