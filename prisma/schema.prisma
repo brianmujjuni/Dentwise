@@ -10,15 +10,17 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+  // uncomment next line if you use Prisma <5.10
+  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 //tables
 //user,doctor,appointments
 
 model User{
-  id String @id default(uuid())
+  id String @id @default(cuid())
   clerkId String @unique
   email String @unique
   firstName String?
@@ -32,7 +34,7 @@ model User{
 }
 
 model Doctor{
-  id String @id default(uuid())
+  id String @id @default(cuid())
   name String
   email String @unique
   phone String?
@@ -49,7 +51,7 @@ model Doctor{
 }
 
 model Appointment{
-  id String @id default(uuid())
+  id String @id @default(cuid())
   date DateTime
   time String
   userId String
